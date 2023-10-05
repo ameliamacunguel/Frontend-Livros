@@ -1,0 +1,18 @@
+.sidenav{
+    background-color: gainsboro
+    ;
+    width: 235px;
+}
+
+.sidenav{
+    color: #fff;
+}
+
+.sidenav{
+    padding: right 10px; ;
+}
+
+.content{
+    padding: 16px;
+    background-color: #FFF;
+}

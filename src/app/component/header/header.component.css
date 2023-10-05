@@ -1,0 +1,26 @@
+header{
+   display: flex;
+   align-items: center; 
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo{
+    max-height: 32px;
+}
+
+.header .header-img{
+    padding-left: 25px;
+}
+
+.header .header-img i{
+    padding-right: 5px;
+}
+
+.header .i{
+    text-align: center;
+}
