@@ -50,4 +50,10 @@ export class BookService {
      map((obj) => obj)
     );
   }
+
+  delete(book: Book): Observable<Book> {
+    return this.http.post<Book>(this.baseUrl, book).pipe(
+     map((obj) => obj)
+    );
+  }
 }

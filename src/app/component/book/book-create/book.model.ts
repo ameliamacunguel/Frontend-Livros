@@ -1,5 +1,10 @@
 export interface Book {
     id?: number
-    titulo: string
-    autor: string
+    title: string,
+    author: string,
+    publishing_company: string,
+    year: 0,
+    description: string,
+    image: string,
+    url_Downloand: string
 }

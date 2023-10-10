@@ -12,8 +12,13 @@ import { BookService } from '../book.service';
 export class BookCreateComponent implements OnInit{
   
   book: Book = {
-    titulo:'',
-    autor: ''
+    title: '',
+    author: '',
+    publishing_company: '',
+    year: 0,
+    description: '',
+    image: '',
+    url_Download: ''
    
   }
 
@@ -27,12 +32,12 @@ export class BookCreateComponent implements OnInit{
   createBook(): void{
 
     this.bookService.create(this.book).subscribe(()=> {
-       this.bookService.showMessage('Livro Adicionado!')
-        this.router.navigate(['/book'])
+       this.bookService.showMessage('Livro Adicionado!');
+        this.router.navigate(['/book']);
     })
   }
 
   cancel(): void{
-    this.router.navigate(['/book'])
+    this.router.navigate(['/book']);
    }
 }

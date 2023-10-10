@@ -25,11 +25,11 @@ export class BookUpdateComponent implements OnInit {
             
               updateProduct(): void{
                 this.bookService.update(this.book).subscribe(() =>{
-                  this.bookService.showMessage("Livro atualizado com sucesso!")
+                  this.bookService.showMessage("Livro actualizado com sucesso!")
                   this.router.navigate(["/book"]);
                 })
             
-              }
+              } 
             
               cancel(): void{
                 this.router.navigate(["/book"]);

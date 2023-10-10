@@ -1,13 +1,33 @@
 <mat-card>
     <mat-card-title>Novo Livro</mat-card-title>
-    <form>
+    <form >
         <mat-form-field>
             <input matInput placeholder="Titulo" 
-            [(ngModel)]="book.titulo" name="titulo">
+            [(ngModel)]="book.title" name="title">
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Autor"
-            [(ngModel)]="book.autor" name="autor">
+            [(ngModel)]="book.author" name="author">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Publicação"
+            [(ngModel)]="book.publishing_company" name="publishing_company">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ano"
+            [(ngModel)]="book.year" name="year">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição"
+            [(ngModel)]="book.description" name="description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Imagem"
+            [(ngModel)]="book.image" name="image">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="url_Downloand"
+            [(ngModel)]="book.url_Downloand" name="url_Downloand">
         </mat-form-field>
     </form>
 

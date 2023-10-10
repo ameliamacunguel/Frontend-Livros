@@ -20,12 +20,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 
 import { HomeComponent } from './views/home/home.component';
 import { BookCreateComponent } from './component/book/book-create/book-create.component';
 import { BookCrudComponent } from './views/book-crud/book-crud.component';
 import { BookReadComponent } from './component/book/book-read/book-read.component';
 import { BookUpdateComponent } from './component/book/book-update/book-update.component';
+import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { BookUpdateComponent } from './component/book/book-update/book-update.co
     BookCrudComponent,
     BookReadComponent,
     BookUpdateComponent,
+    BookDeleteComponent,
     
     
   ],
@@ -54,6 +57,7 @@ import { BookUpdateComponent } from './component/book/book-update/book-update.co
     HttpClientModule,
     MatSnackBarModule,
     FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

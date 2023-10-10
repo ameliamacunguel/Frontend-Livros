@@ -10,12 +10,12 @@ import { BookService } from '../book.service';
 export class BookReadComponent  implements OnInit{
 
   book: Book[]=[]
-  displayedColumns = ['id', 'titulo', 'autor']
+  displayedColumns = ['id', 'title', 'author', 'publishing_company', 'year', 'description','image','url_Download','actions' ]
 
   constructor(private bookService: BookService){}
 
   ngOnInit(): void {
-      this.bookService.read().subscribe((book: Book[]) => {
+      this.bookService.read().subscribe(book => {
         this.book = book
         console.log(book)
         
