@@ -3,35 +3,35 @@
     <form>
         <mat-form-field>
             <input matInput placeholder="Titulo" 
-            [(ngModel)]="book.title" name="title">
+            [(ngModel)]="book.title" name="title" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Autor"
-            [(ngModel)]="book.author" name="author">
+            [(ngModel)]="book.author" name="author" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Publicação"
-            [(ngModel)]="book.publishing_company" name="publishing_company">
+            [(ngModel)]="book.publishing_company" name="publishing_company" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Ano"
-            [(ngModel)]="book.year" name="year">
+            [(ngModel)]="book.year" name="year" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Descrição"
-            [(ngModel)]="book.description" name="description">
+            [(ngModel)]="book.description" name="description" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Imagem"
-            [(ngModel)]="book.image" name="image">
+            [(ngModel)]="book.image" name="image" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="url_Downloand"
-            [(ngModel)]="book.url_Downloand" name="url_Downloand">
+            <input matInput placeholder="url_Download"
+            [(ngModel)]="book.url_Download" name="url_Download" disabled>
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)="deleteProduct()" color="primary" >
+    <button mat-raised-button (click)="deleteProduct()" color="warn"  >
        Excluir 
     </button>
     

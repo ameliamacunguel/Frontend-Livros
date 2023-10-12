@@ -20,7 +20,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 import { HomeComponent } from './views/home/home.component';
 import { BookCreateComponent } from './component/book/book-create/book-create.component';
@@ -28,6 +32,7 @@ import { BookCrudComponent } from './views/book-crud/book-crud.component';
 import { BookReadComponent } from './component/book/book-read/book-read.component';
 import { BookUpdateComponent } from './component/book/book-update/book-update.component';
 import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
+import { BookPageComponent } from './component/book/book-page/book-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,7 @@ import { BookDeleteComponent } from './component/book/book-delete/book-delete.co
     BookReadComponent,
     BookUpdateComponent,
     BookDeleteComponent,
+    BookPageComponent,
     
     
   ],
@@ -57,7 +63,12 @@ import { BookDeleteComponent } from './component/book/book-delete/book-delete.co
     HttpClientModule,
     MatSnackBarModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatSortModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

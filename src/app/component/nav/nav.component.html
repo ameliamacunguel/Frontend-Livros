@@ -15,15 +15,18 @@
                     </i>
                     Livros
                 </a>
+                <a mat-list-item routerLink="book/page">
+                    <i class="material-icons">
+                        
+                    </i>
+                    Livros Adicionados
+                </a>
                 
-               
-            </mat-nav-list>
+               </mat-nav-list>
     </mat-sidenav>
     
-    <mat-sidenav-content class="content">
-        
-    <router-outlet></router-outlet>
-    
+    <mat-sidenav-content class="content">    
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 
 </mat-sidenav-container>

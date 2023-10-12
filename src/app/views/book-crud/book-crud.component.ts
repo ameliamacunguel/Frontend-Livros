@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { HeaderService } from 'src/app/component/header/header.service';
 
 
 @Component({
@@ -12,8 +12,15 @@ import { Router } from '@angular/router';
 @Injectable()
 export class BookCrudComponent implements OnInit {
   
-  constructor(private router: Router){}
+  constructor(private router: Router, private headerService: HeaderService){
+   headerService.headerData = {
+      title: 'Cadastro de Livros',
+      icon: 'storefront',
+      routeUrl: '/book'
+    }
+  }
 
+  
   ngOnInit(): void {}
 
   navigateToBookCreate(): void{

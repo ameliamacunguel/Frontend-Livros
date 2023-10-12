@@ -6,6 +6,7 @@ import { BookCrudComponent } from './views/book-crud/book-crud.component';
 import { BookCreateComponent } from './component/book/book-create/book-create.component';
 import { BookUpdateComponent } from './component/book/book-update/book-update.component';
 import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
+import { BookPageComponent } from './component/book/book-page/book-page.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,16 @@ const routes: Routes = [
     component: BookCreateComponent
   },
   {
-    path: "book/update:id",
+    path: "book/update/:id",
     component: BookUpdateComponent
   },
   {
-    path: "book/delete:id",
+    path: "book/delete/:id",
     component: BookDeleteComponent
+  },
+  {
+    path: "book/page",
+    component: BookPageComponent
   }
 ];
 

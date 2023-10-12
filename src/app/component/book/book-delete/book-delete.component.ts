@@ -12,24 +12,34 @@ export class BookDeleteComponent implements OnInit{
 
   
   book!: Book;
+  
   constructor(private bookService: BookService,
               private router: Router ,
               private route: ActivatedRoute){}
 
+    id!: string;
+
     ngOnInit(): void {
 
     const id = this.route.snapshot.paramMap.get('id');
-     this.bookService.readById('id').subscribe((book) =>{
-       this.book = book;
+
+    if(id) {
+     this.id = id;
+     console.log(this.id);
+     
+     this.bookService.readById(id).subscribe((book) =>{
+      if(book){
+      this.book = book;
+     }
       });
     }
+  }
             
     deleteProduct(): void{
       this.bookService.delete(this.book).subscribe(() =>{
-      this.bookService.showMessage("Livro excluido!")
+      this.bookService.showMessage("Livro excluído com sucesso!")
         this.router.navigate(["/book"]);
-      })
-            
+      })     
     }
             
     cancel(): void{

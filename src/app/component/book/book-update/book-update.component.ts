@@ -16,11 +16,23 @@ export class BookUpdateComponent implements OnInit {
               private router: Router ,
               private route: ActivatedRoute){}
 
-              ngOnInit(): void {
-                const id = this.route.snapshot.paramMap.get('id');
-                this.bookService.readById('id').subscribe((book) =>{
-                  this.book = book;
-                });
+
+        id! : string;
+        
+    ngOnInit(): void {
+
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if(id) {
+     this.id = id;
+     console.log(this.id);
+     
+     this.bookService.readById(id).subscribe((book) =>{
+      if(book){
+      this.book = book;
+     }
+      });
+    }
               }
             
               updateProduct(): void{

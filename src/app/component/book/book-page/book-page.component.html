@@ -1,0 +1,20 @@
+<div class="card" *ngFor="let page of books">
+<mat-card class="example-card">
+    <mat-card-header>
+      
+      <mat-card-title>{{page.title}}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+
+    </mat-card-header>
+    <img mat-card-image class="image" src="{{page.image}}" alt="Ção-Tinhoso">
+    
+    <mat-card-content>
+      <th>{{page.author}}</th>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button  type="button" mat-raised-button (click)="edit(page.id)" >Editar</button>
+      <button mat-button mat-raised-button (click)="delete(page.id)" color="warn">Excluir</button>
+    </mat-card-actions>
+  </mat-card> 
+</div>

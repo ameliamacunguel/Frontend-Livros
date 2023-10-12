@@ -9,16 +9,21 @@ import { BookService } from '../book.service';
 })
 export class BookReadComponent  implements OnInit{
 
-  book: Book[]=[]
-  displayedColumns = ['id', 'title', 'author', 'publishing_company', 'year', 'description','image','url_Download','actions' ]
+  public books: Book[]=[]
+  displayedColumns = [ 'id', 'title', 'author', 'publishing_company', 'year', 'description', 'image',  'url_Download', 'actions' ]
+  // displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  // dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+
 
   constructor(private bookService: BookService){}
 
+
   ngOnInit(): void {
       this.bookService.read().subscribe(book => {
-        this.book = book
-        console.log(book)
-        
+        if(book){
+          this.books = book;
+          console.log(book);
+        }
       })
   }
 }

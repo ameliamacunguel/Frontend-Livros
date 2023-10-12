@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Book } from './book-create/book.model';
-import { Observable, map } from 'rxjs';
+import { Observable, map, catchError, EMPTY} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,25 +14,27 @@ export class BookService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient){}
 
-  showMessage(msg: string) {
+  showMessage(msg: string, isError: boolean = false) {
     this.snackBar.open(msg, "X", {
       duration:3000,
       horizontalPosition: "right",
       verticalPosition: "top",
-      panelClass:['msg-success']
+      panelClass: isError ? ['msg-error'] : ['msg-success']
     });
   }
 
 
   create(book: Book): Observable<Book> {
     return this.http.post<Book>(this.baseUrl, book).pipe(
-     map((obj) => obj)
+     map((obj) => obj),
+     catchError(e =>this.errorHandler(e))
     );
   }
 
   read():Observable<Book[]>{
     return this.http.get<Book[]>(this.baseUrl).pipe(
-      map((obj) => obj)
+      map((obj) => obj),
+      catchError(e =>this.errorHandler(e))
       
     );
   }
@@ -40,20 +42,30 @@ export class BookService {
   readById(id: string): Observable<Book> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Book>(url).pipe(
-      map((obj) => obj)
+      map((obj) => obj),
+      catchError(e =>this.errorHandler(e))
       
     );
   }
 
   update(book: Book): Observable<Book> {
-    return this.http.post<Book>(this.baseUrl, book).pipe(
-     map((obj) => obj)
+    const url = `${this.baseUrl}/${book.id}`;
+    return this.http.put<Book>(url, book).pipe(
+     map((obj) => obj),
+     catchError(e =>this.errorHandler(e))
     );
   }
 
   delete(book: Book): Observable<Book> {
-    return this.http.post<Book>(this.baseUrl, book).pipe(
-     map((obj) => obj)
+    console.log()
+    return this.http.delete<Book>(`${this.baseUrl}/${book.id}`).pipe(
+     map((obj) => obj),
+     catchError(e =>this.errorHandler(e))
     );
   }
+  errorHandler(e: any): Observable<any>{
+    this.showMessage("Ocorreu um erro!", true);
+    return EMPTY
+  }
+
 }
