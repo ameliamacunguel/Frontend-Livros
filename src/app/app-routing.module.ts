@@ -7,6 +7,7 @@ import { BookCreateComponent } from './component/book/book-create/book-create.co
 import { BookUpdateComponent } from './component/book/book-update/book-update.component';
 import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
 import { BookPageComponent } from './component/book/book-page/book-page.component';
+import { BookSiteComponent } from './component/book/book-site/book-site.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: "book/page",
     component: BookPageComponent
+  },
+  {
+    path: "book/site",
+    component: BookSiteComponent
   }
 ];
 

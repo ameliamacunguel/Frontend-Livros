@@ -1,0 +1,13 @@
+<div class="card" *ngFor="let page of books">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{page.title}}</mat-card-title>
+        <mat-card-subtitle>{{page.description}}</mat-card-subtitle>
+    
+        <img mat-card-xl-image src="{{page.image}}" alt="Ção-Tinhoso">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>{{page.author}}</mat-card-content>
+  </mat-card>
+</div>

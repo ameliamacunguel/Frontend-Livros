@@ -1,3 +1,4 @@
+<div class="books">
 <div class="card" *ngFor="let page of books">
 <mat-card class="example-card">
     <mat-card-header>
@@ -6,7 +7,7 @@
       <mat-card-subtitle></mat-card-subtitle>
 
     </mat-card-header>
-    <img mat-card-image class="image" src="{{page.image}}" alt="Ção-Tinhoso">
+    <img mat-card-image class="image" src="{{page.image}}"  routerLink="/book/site" alt="Ção-Tinhoso">
     
     <mat-card-content>
       <th>{{page.author}}</th>
@@ -17,4 +18,5 @@
       <button mat-button mat-raised-button (click)="delete(page.id)" color="warn">Excluir</button>
     </mat-card-actions>
   </mat-card> 
+</div>
 </div>

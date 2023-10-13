@@ -11,17 +11,7 @@ import { BookService } from '../book.service';
 
 export class BookCreateComponent implements OnInit{
   
-  book: Book = {
-    id: 0,
-    title: '',
-    author: '',
-    publishing_company: '',
-    year: 0,
-    description: '',
-    image: '',
-    url_Download: ''
-   
-  }
+  book!: Book ;
 
  constructor(private bookService: BookService,
               private router: Router){}

@@ -33,6 +33,7 @@ import { BookReadComponent } from './component/book/book-read/book-read.componen
 import { BookUpdateComponent } from './component/book/book-update/book-update.component';
 import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
 import { BookPageComponent } from './component/book/book-page/book-page.component';
+import { BookSiteComponent } from './component/book/book-site/book-site.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BookPageComponent } from './component/book/book-page/book-page.componen
     BookUpdateComponent,
     BookDeleteComponent,
     BookPageComponent,
+    BookSiteComponent,
     
     
   ],
