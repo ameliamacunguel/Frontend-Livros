@@ -14,7 +14,7 @@ export class BookPageComponent implements OnInit {
   constructor(private router: Router, private bookService: BookService) {}
 
   ngOnInit(): void {
-    this.bookService.read().subscribe((book) => {
+    this.bookService.read().subscribe(book => {
       this.books = book;
       console.log(book);
     });

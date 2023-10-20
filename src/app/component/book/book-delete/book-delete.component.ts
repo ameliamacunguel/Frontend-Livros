@@ -27,7 +27,7 @@ export class BookDeleteComponent implements OnInit{
      this.id = id;
      console.log(this.id);
      
-     this.bookService.readById(id).subscribe((book) =>{
+     this.bookService.readById(+id).subscribe((book) =>{
       if(book){
       this.book = book;
      }

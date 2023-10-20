@@ -7,8 +7,12 @@
       <mat-card-subtitle></mat-card-subtitle>
 
     </mat-card-header>
-    <img mat-card-image class="image" src="{{page.image}}"  routerLink="/book/site" alt="Ção-Tinhoso">
+    <a routerLink="/book-site/{{page.id}}" >
+      
+      <img mat-card-image class="image" src="{{page.image}}"  alt="Ção-Tinhoso">
     
+    </a>
+  
     <mat-card-content>
       <th>{{page.author}}</th>
     </mat-card-content>

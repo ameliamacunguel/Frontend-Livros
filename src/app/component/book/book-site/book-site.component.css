@@ -2,4 +2,13 @@
     max-width: 700px;
     margin-bottom: 10px;
   }
+  .card {
+    line-height: normal;
+  }
   
+  .col-3{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    
+  }

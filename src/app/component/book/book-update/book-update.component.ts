@@ -24,12 +24,13 @@ export class BookUpdateComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
 
     if(id) {
-     this.id = id;
-     console.log(this.id);
+     const up = +id;
+    
      
-     this.bookService.readById(id).subscribe((book) =>{
-      if(book){
-      this.book = book;
+     this.bookService.readById(up).subscribe(data =>{
+      if(data){
+      this.book = data;
+      console.log(data);
      }
       });
     }

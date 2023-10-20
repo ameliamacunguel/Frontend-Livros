@@ -35,7 +35,7 @@ const routes: Routes = [
     component: BookPageComponent
   },
   {
-    path: "book/site",
+    path: "book-site/:id",
     component: BookSiteComponent
   }
 ];

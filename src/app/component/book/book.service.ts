@@ -39,7 +39,7 @@ export class BookService {
     );
   }
 
-  readById(id: string): Observable<Book> {
+  readById(id: number): Observable<Book> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Book>(url).pipe(
       map((obj) => obj),

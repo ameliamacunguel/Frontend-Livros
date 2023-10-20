@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from "../book-create/book.model";
 import { BookService } from "../book.service";
 
@@ -9,14 +9,21 @@ import { BookService } from "../book.service";
   styleUrls: ['./book-site.component.css']
 })
 export class BookSiteComponent  implements OnInit{
-  books: Book[] = [];
+  books!: Book;
 
-  constructor(private router: Router, private bookService: BookService){}
+  constructor(private router: Router, private bookService: BookService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-       this.bookService.read().subscribe((book) => {
-      this.books = book;
-      console.log(book);
-    });
-  }
+       const id=this.route.snapshot.paramMap.get('id');
+        if(id){
+          this.bookService.readById(+id).subscribe(data => {
+            if(data){
+              this.books = data;
+              console.log(data);
+            }
+          })
+           
+        }
+      }
 }
+
