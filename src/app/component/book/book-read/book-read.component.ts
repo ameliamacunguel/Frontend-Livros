@@ -10,9 +10,9 @@ import { BookService } from '../book.service';
 export class BookReadComponent  implements OnInit{
 
   public books: Book[]=[]
-  displayedColumns = [ 'id', 'title', 'author', 'publishing_company', 'year', 'description', 'image',  'url_Download', 'actions' ]
-  // displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  // dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+  displayedColumns = [ 'id', 'title', 'author', 'publishing_company', 'year',  'actions' ]
+  
+  
 
 
   constructor(private bookService: BookService){}

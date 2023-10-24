@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavComponent } from './component/nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,7 +24,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HomeComponent } from './views/home/home.component';
 import { BookCreateComponent } from './component/book/book-create/book-create.component';
@@ -34,6 +35,8 @@ import { BookUpdateComponent } from './component/book/book-update/book-update.co
 import { BookDeleteComponent } from './component/book/book-delete/book-delete.component';
 import { BookPageComponent } from './component/book/book-page/book-page.component';
 import { BookSiteComponent } from './component/book/book-site/book-site.component';
+
+
 
 @NgModule({
   declarations: [
@@ -50,8 +53,8 @@ import { BookSiteComponent } from './component/book/book-site/book-site.componen
     BookPageComponent,
     BookSiteComponent,
     
-    
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -69,8 +72,11 @@ import { BookSiteComponent } from './component/book/book-site/book-site.componen
     MatTableModule,
     FormsModule,
     MatPaginatorModule,
-    MatSortModule
-  
+    MatSortModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

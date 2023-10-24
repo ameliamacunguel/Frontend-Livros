@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Book } from './book-create/book.model';
 import { Observable, map, catchError, EMPTY} from 'rxjs';
+import { Form } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,10 @@ export class BookService {
   errorHandler(e: any): Observable<any>{
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY
+  }
+
+  postForms(form: any): Observable<Form>{
+    return this.http.post<any>(this.baseUrl, form); 
   }
 
 }

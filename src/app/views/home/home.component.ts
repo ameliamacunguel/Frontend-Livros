@@ -1,3 +1,5 @@
+import { HeaderData } from './../../component/header/header-data.model';
+import { HeaderService } from 'src/app/component/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,7 +14,14 @@ export class HomeComponent implements OnInit {
 
   
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private headerService: HeaderService){
+
+    headerService.headerData = {
+      title: 'Início',
+      icon: 'home',
+      routeUrl: '/home'
+    }
+  }
 
    ngOnInit(): void {}
    navigateToBookCreate(): void{

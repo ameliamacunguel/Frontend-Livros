@@ -14,7 +14,7 @@ export class BookCrudComponent implements OnInit {
   
   constructor(private router: Router, private headerService: HeaderService){
    headerService.headerData = {
-      title: 'Cadastro de Livros',
+      title: 'Lista de Livros',
       icon: 'storefront',
       routeUrl: '/book'
     }

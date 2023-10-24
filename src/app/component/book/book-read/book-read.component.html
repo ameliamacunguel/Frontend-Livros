@@ -1,4 +1,4 @@
-<div class="example-container mat-elevation-z8">
+<div class="example-container mat-elevation-z8" *ngIf="books">
   <mat-table #table [dataSource]="books">
 
     <!-- Id Column -->
@@ -61,6 +61,11 @@
         <a routerLink="/book/delete/{{row.id}}" class="delete">
           <i class="material-icons">
             delete
+          </i>
+        </a>
+        <a routerLink="/book-site/{{row.id}}" class="description">
+          <i class="material-icons">
+            description
           </i>
         </a>
       </td>

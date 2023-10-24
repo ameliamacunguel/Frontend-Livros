@@ -38,8 +38,10 @@ const routes: Routes = [
     path: "book-site/:id",
     component: BookSiteComponent
   }
+  
+  
 ];
-
+BookSiteComponent
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
